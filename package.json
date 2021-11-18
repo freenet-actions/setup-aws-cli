@@ -1,8 +1,8 @@
 {
-  "name": "setup-github-cli",
-  "version": "1.0.9",
+  "name": "setup-aws-cli",
+  "version": "1.0.0",
   "private": true,
-  "description": "Setup the github cli tools",
+  "description": "Setup the aws cli tools",
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/md-actions/setup-github-cli.git"
+    "url": "git+https://github.com/md-actions/setup-aws-cli.git"
   },
   "keywords": [
     "actions",

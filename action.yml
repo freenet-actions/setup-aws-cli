@@ -3,9 +3,9 @@ description: 'setup AWS CLI'
 author: 'DPVO'
 inputs:
   version: 
-    required: false
+    required: true
     description: 'Version of AWS CLi'
-    default: ''
+    default: '2.0.37'
 runs:
   using: 'node12'
   main: 'dist/index.js'
