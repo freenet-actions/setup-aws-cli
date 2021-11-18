@@ -1,0 +1,11 @@
+name: 'setup-aws-cli'
+description: 'setup AWS CLI'
+author: 'DPVO'
+inputs:
+  version: 
+    required: false
+    description: 'Version of AWS CLi'
+    default: ''
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
