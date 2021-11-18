@@ -38,7 +38,6 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.install = void 0;
 const core = __importStar(__nccwpck_require__(186));
 const exec = __importStar(__nccwpck_require__(514));
-const fs = __importStar(__nccwpck_require__(147));
 const io = __importStar(__nccwpck_require__(436));
 const path = __importStar(__nccwpck_require__(17));
 const tc = __importStar(__nccwpck_require__(784));
@@ -46,22 +45,16 @@ const toolName = 'aws-cli';
 function install(version) {
     return __awaiter(this, void 0, void 0, function* () {
         let toolPath;
-        toolPath = yield isAlreadyInstalled();
+        toolPath = tc.find(toolName, version);
         if (!toolPath) {
             toolPath = yield downloadAWSCli(version);
         }
-        console.log('tool path', toolPath);
         core.addPath(toolPath);
     });
 }
 exports.install = install;
-function isAlreadyInstalled() {
-    return __awaiter(this, void 0, void 0, function* () {
-        return tc.find(toolName, '*');
-    });
-}
-function getDownloadUrl() {
-    return 'https://s3.amazonaws.com/aws-cli/awscli-bundle.zip';
+function getDownloadUrl(version) {
+    return `https://awscli.amazonaws.com/awscli-exe-linux-x86_64-${version}.zip`;
 }
 function downloadFile(downloadUrl) {
     return __awaiter(this, void 0, void 0, function* () {
@@ -71,30 +64,25 @@ function downloadFile(downloadUrl) {
         return destPath;
     });
 }
-function readFile(filepath) {
-    return __awaiter(this, void 0, void 0, function* () {
-        try {
-            return fs.readFileSync(filepath, 'utf-8');
-        }
-        catch (err) {
-            throw err;
-        }
-    });
-}
 function downloadAWSCli(version) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const downloadUrl = getDownloadUrl();
+            const downloadUrl = getDownloadUrl(version);
             let installFilePath = yield downloadFile(downloadUrl);
             if (path.extname(downloadUrl) === '.zip') {
                 const extractedPath = yield tc.extractZip(installFilePath);
-                installFilePath = path.join(extractedPath, 'awscli-bundle', 'install');
+                installFilePath = path.join(extractedPath, 'aws', 'install');
                 const rootPath = path.parse(installFilePath).dir;
                 const installDestinationDir = path.join(rootPath, '.local', 'lib', 'aws');
-                const installArgs = ['-i', installDestinationDir];
-                const binFile = 'aws';
+                const binDestinationDir = path.join(rootPath, '.local', 'bin');
+                const installArgs = [
+                    '--install-dir',
+                    installDestinationDir,
+                    '--bin-dir',
+                    binDestinationDir
+                ];
                 yield exec.exec(installFilePath, installArgs);
-                return path.join(installDestinationDir, 'bin', binFile);
+                return binDestinationDir;
             }
             else {
                 const errormsg = 'Unsupported extension';
