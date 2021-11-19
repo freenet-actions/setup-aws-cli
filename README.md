@@ -3,6 +3,8 @@
 
 This action sets up AWS CLI tool. It downloads AWS CLI binaries from https://s3.amazonaws.com/aws-cli, unpacks the downloaded file, runs the install program and adds path to PATH
 
+
+Currently the action can only be used on linux plattform.
    
 # Usage
 ## Set up default AWS CLI version (3.7.0)
@@ -15,3 +17,6 @@ This action sets up AWS CLI tool. It downloads AWS CLI binaries from https://s3.
   with:
     version: '3.6.0'
 ```
+
+# References
+[AWS CLI Install Documentation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
