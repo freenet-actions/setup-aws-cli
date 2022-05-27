@@ -1,6 +1,6 @@
 name: 'setup-aws-cli'
 description: 'setup AWS CLI'
-author: 'DPVO'
+author: 'freenet'
 inputs:
   version: 
     required: true
