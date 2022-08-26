@@ -1,6 +1,6 @@
 {
   "name": "setup-aws-cli",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "private": true,
   "description": "Setup the aws cli tools",
   "main": "lib/main.js",
