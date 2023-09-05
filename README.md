@@ -9,11 +9,11 @@ Currently the action can only be used on linux plattform.
 # Usage
 ## Set up default AWS CLI version (2.13.13)
 ```yaml
-- uses: freenet-actions/setup-aws-cli@v2
+- uses: freenet-actions/setup-aws-cli@v3
 ```
 ## Set up specific AWS CLI version
 ```yaml
-- uses: freenet-actions/setup-aws-cli@v2
+- uses: freenet-actions/setup-aws-cli@v3
   with:
     version: '2.13.13'
 ```

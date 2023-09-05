@@ -1,6 +1,6 @@
 {
   "name": "setup-aws-cli",
-  "version": "2.0.8",
+  "version": "3.0.0",
   "private": true,
   "description": "Setup the aws cli tools",
   "main": "lib/main.js",
@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@types/jest": "28.1.8",
-    "@types/node": "20.5.7",
+    "@types/node": "20.5.9",
     "@typescript-eslint/parser": "6.5.0",
     "@vercel/ncc": "0.36.1",
     "eslint": "8.48.0",
