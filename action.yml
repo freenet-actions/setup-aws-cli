@@ -7,5 +7,5 @@ inputs:
     description: 'Version of AWS CLi'
     default: '2.13.13'
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
