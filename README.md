@@ -1,4 +1,4 @@
-# setup AWS CLI
+# Setup AWS CLI
 [![LICENSE](https://img.shields.io/github/license/freenet-actions/setup-aws-cli)](https://github.com/freenet-actions/setup-aws-cli/blob/main/LICENSE)
 
 This action sets up AWS CLI tool. It downloads AWS CLI binaries from https://s3.amazonaws.com/aws-cli, unpacks the downloaded file, runs the install program and adds path to PATH
@@ -7,7 +7,7 @@ This action sets up AWS CLI tool. It downloads AWS CLI binaries from https://s3.
 Currently the action can only be used on linux plattform.
    
 # Usage
-## Set up default AWS CLI version (2.15.51)
+## Set up default AWS CLI version (2.17.18)
 ```yaml
 - uses: freenet-actions/setup-aws-cli@v3
 ```
@@ -15,7 +15,7 @@ Currently the action can only be used on linux plattform.
 ```yaml
 - uses: freenet-actions/setup-aws-cli@v3
   with:
-    version: '2.15.51'
+    version: '2.17.18'
 ```
 
 # References
