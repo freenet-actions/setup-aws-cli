@@ -5,6 +5,9 @@ updates:
     directory: '/'
     schedule:
       interval: 'daily'
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
   # Maintain dependencies for GitHub Actions
   - package-ecosystem: "github-actions"
     directory: "/"
