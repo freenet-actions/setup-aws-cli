@@ -39,7 +39,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.install = void 0;
+exports.install = install;
 const core = __importStar(__nccwpck_require__(2186));
 const exec = __importStar(__nccwpck_require__(1514));
 const io = __importStar(__nccwpck_require__(7436));
@@ -56,7 +56,6 @@ function install(version) {
         core.addPath(toolPath);
     });
 }
-exports.install = install;
 function getDownloadUrl(version) {
     return `https://awscli.amazonaws.com/awscli-exe-linux-x86_64-${version}.zip`;
 }
