@@ -7,7 +7,7 @@ This action sets up AWS CLI tool. It downloads AWS CLI binaries from https://s3.
 Currently the action can only be used on linux plattform.
    
 # Usage
-## Set up AWS CLI with default version (2.22.21)
+## Set up AWS CLI with default version (2.27.55)
 ```yaml
 - uses: freenet-actions/setup-aws-cli@v3
 ```
@@ -15,7 +15,7 @@ Currently the action can only be used on linux plattform.
 ```yaml
 - uses: freenet-actions/setup-aws-cli@v3
   with:
-    version: '2.22.21'
+    version: '2.27.55'
 ```
 
 # References

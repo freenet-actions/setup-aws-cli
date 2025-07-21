@@ -2,10 +2,10 @@ name: 'setup-aws-cli'
 description: 'setup AWS CLI'
 author: 'freenet'
 inputs:
-  version: 
+  version:
     required: true
     description: 'Version of AWS CLi'
-    default: '2.22.21'
+    default: '2.27.55'
 runs:
   using: 'node20'
   main: 'dist/index.js'
