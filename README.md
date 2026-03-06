@@ -5,6 +5,8 @@
 This action sets up AWS CLI tool. It downloads AWS CLI binaries from https://s3.amazonaws.com/aws-cli, unpacks the downloaded file, runs the install program and adds path to PATH
 
 Currently the action can only be used on linux plattform.
+
+If you're using GitHub-hosted runners in your workflow, you probably don't need this (see "Included Software" on https://github.com/actions/runner-images).
    
 # Usage
 ## Set up AWS CLI with default version (2.27.55)
